@@ -1571,3 +1571,36 @@ body::after {
 .analytics-card:nth-child(1) { animation-delay: 0.25s; }
 .analytics-card:nth-child(2) { animation-delay: 0.3s; }
 .notifications-card { animation-delay: 0.35s; }
+
+
+.opp-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.opp-meta {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.opp-desc {
+    margin: 10px 0;
+}
+
+.opp-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.view-btn {
+    background: #2e7d32;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
