@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from flask_login import LoginManager
 from models import db, User
+import os
 
 login_manager = LoginManager()
 
@@ -20,22 +21,19 @@ def create_app():
     def load_user(user_id):
         return User.query.get(int(user_id))
 
-    # 🔥 IMPORTANT (must be inside function)
     from routes import main
     app.register_blueprint(main)
 
-    return app   # ✅ THIS LINE IS CRITICAL
+    return app
 
 
-# 🔥 create app instance
 app = create_app()
 
 
-# ===== ROUTE =====
 @app.route('/')
 def home():
     return render_template('admin.html')
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
