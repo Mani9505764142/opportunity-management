@@ -6,7 +6,11 @@ import os
 login_manager = LoginManager()
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(
+    __name__,
+    static_folder='static',
+    template_folder='templates'
+)
 
     app.config['SECRET_KEY'] = 'your_secret_key'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
